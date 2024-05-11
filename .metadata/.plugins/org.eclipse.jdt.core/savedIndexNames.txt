@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+C:\Users\FAIR\OneDrive\Documentos\ISPW\Actividades\SEM01\.metadata\.plugins\org.eclipse.jdt.core
+2080662588.index
+2450130192.index
+1865797976.index
+3842848134.index
+2070519845.index
