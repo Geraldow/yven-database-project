@@ -31,21 +31,21 @@ import lombok.experimental.SuperBuilder;
 @Table ( name = "evento")
 @XmlRootElement
 @NamedQueries ({
-	@NamedQuery (name = "Evento.findAll" , query = "SELECT e FROM Evento e"),
-	@NamedQuery(name = "Evento.findByIdPelicula", query="SELECT e FROM Evento e WHERE e.idEvento= :idEvento"),
-	@NamedQuery(name = "Evento.findByNombre", query = "SELECT e FROM Evento e WHERE e.tituloEvento = :tituloEvento"),
-    @NamedQuery(name = "Evento.findByDuracion", query = "SELECT e FROM Evento e WHERE e.descripcionEvento = :descripcionEvento"),
-    @NamedQuery(name = "Evento.findByClasificacion", query = "SELECT e FROM Evento e WHERE e.ubicacionEvento= :ubicacionEvento"),
-    @NamedQuery(name = "Evento.findByIdioma", query = "SELECT e FROM Evento e WHERE e.tipoEvento = :tipoEvento"),
-    @NamedQuery(name = "Evento.findByGenero", query = "SELECT e FROM Evento e WHERE e.fechaEvento = :fechaEvento"),
-    @NamedQuery(name = "Evento.findByFormato", query = "SELECT e FROM Evento e WHERE e.horaInicio = :horaInicio"),
-    @NamedQuery(name = "Evento.findBySinopsis", query = "SELECT e FROM Evento e WHERE e.horaFinalizacion = :horaFinalizacion"),
-    @NamedQuery(name = "Evento.findByIdioma", query = "SELECT e FROM Evento e WHERE e.capacidadEvento = :capacidadEvento"),
-    @NamedQuery(name = "Evento.findByGenero", query = "SELECT e FROM Evento e WHERE e.estadoEvento = :estadoEvento"),
-    @NamedQuery(name = "Evento.findByFormato", query = "SELECT e FROM Evento e WHERE e.precioEntrada = :precioEntrada"),
-    @NamedQuery(name = "Evento.findBySinopsis", query = "SELECT e FROM Evento e WHERE e.catering = :catering"),
-    @NamedQuery(name = "Evento.findByFormato", query = "SELECT e FROM Evento e WHERE e.presupuesto = :presupuesto"),
-    @NamedQuery(name = "Evento.findBySinopsis", query = "SELECT e FROM Evento e WHERE e.organizadorId = :organizadorId")
+	@NamedQuery(name = "Evento.findAll", query = "SELECT e FROM Evento e"),
+    @NamedQuery(name = "Evento.findByIdEvento", query = "SELECT e FROM Evento e WHERE e.idEvento = :idEvento"),
+    @NamedQuery(name = "Evento.findByTituloEvento", query = "SELECT e FROM Evento e WHERE e.tituloEvento = :tituloEvento"),
+    @NamedQuery(name = "Evento.findByDescripcionEvento", query = "SELECT e FROM Evento e WHERE e.descripcionEvento = :descripcionEvento"),
+    @NamedQuery(name = "Evento.findByUbicacionEvento", query = "SELECT e FROM Evento e WHERE e.ubicacionEvento = :ubicacionEvento"),
+    @NamedQuery(name = "Evento.findByTipoEvento", query = "SELECT e FROM Evento e WHERE e.tipoEvento = :tipoEvento"),
+    @NamedQuery(name = "Evento.findByFechaEvento", query = "SELECT e FROM Evento e WHERE e.fechaEvento = :fechaEvento"),
+    @NamedQuery(name = "Evento.findByHoraInicio", query = "SELECT e FROM Evento e WHERE e.horaInicio = :horaInicio"),
+    @NamedQuery(name = "Evento.findByHoraFinalizacion", query = "SELECT e FROM Evento e WHERE e.horaFinalizacion = :horaFinalizacion"),
+    @NamedQuery(name = "Evento.findByCapacidadEvento", query = "SELECT e FROM Evento e WHERE e.capacidadEvento = :capacidadEvento"),
+    @NamedQuery(name = "Evento.findByEstadoEvento", query = "SELECT e FROM Evento e WHERE e.estadoEvento = :estadoEvento"),
+    @NamedQuery(name = "Evento.findByPrecioEntrada", query = "SELECT e FROM Evento e WHERE e.precioEntrada = :precioEntrada"),
+    @NamedQuery(name = "Evento.findByCatering", query = "SELECT e FROM Evento e WHERE e.catering = :catering"),
+    @NamedQuery(name = "Evento.findByPresupuesto", query = "SELECT e FROM Evento e WHERE e.presupuesto = :presupuesto"),
+    @NamedQuery(name = "Evento.findByOrganizadorId", query = "SELECT e FROM Evento e WHERE e.organizadorId = :organizadorId")
 	
 })
 
