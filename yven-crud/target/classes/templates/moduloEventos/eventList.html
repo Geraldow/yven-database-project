@@ -30,7 +30,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="pelicula : ${listaPeliculas}">
+				<tr th:each="eventos : ${listarEventos}">
 					<td th:text="${evento.idEvento}">Id</td>
 					<td th:text="${evento.tituloEvento}">Titulo</td>
 					<td th:text="${evento.descripcionEvento}">Descripción</td>
@@ -43,7 +43,7 @@
 					<td th:text="${evento.estadoEvento}">Estado</td>
 					<td th:text="${evento.precioEntrada}">Precio</td>
 					<td th:text="${evento.catering}">Catering</td>
-					<td th:text="${evento.presupuesto}">presupuesto</td>
+					<td th:text="${evento.presupuesto}">Presupuesto</td>
 					<td th:text="${evento.organizadorId}">Proveedor</td>
 					<td><a th:href="@{/eventos/actualizar/{id}(id=${evento.idEvento})}">Actualizar</a>
 					<td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a>
