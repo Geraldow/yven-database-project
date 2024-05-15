@@ -9,5 +9,4 @@ public class YvenCrudApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(YvenCrudApplication.class, args);
 	}
-
 }

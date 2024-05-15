@@ -156,4 +156,24 @@ public class Persona implements Serializable {
 	public void setUbigeo(Integer ubigeo) {
 	    this.ubigeo = ubigeo;
 	}
+	
+    public Persona(String tipoDocumento, 
+    				int numeroDocumento, 
+    				String primerApellido, 
+    				String segundoApellido, 
+    				String nombres, 
+    				String fechaNacimiento,
+    				String sexo, 
+    				String estadoCivil, 
+    				int ubigeo) {
+						 this.tipoDocumento = tipoDocumento;
+						 this.numeroDocumento = numeroDocumento;
+						 this.primerApellido = primerApellido;
+						 this.segundoApellido = segundoApellido;
+						 this.nombres = nombres;
+						 this.fechaNacimiento = fechaNacimiento;
+						 this.sexo = sexo;
+						 this.estadoCivil = estadoCivil;
+						 this.ubigeo = ubigeo;
+						 }
 }	
