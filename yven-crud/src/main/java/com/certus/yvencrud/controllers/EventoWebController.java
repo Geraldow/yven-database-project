@@ -25,7 +25,7 @@ public class EventoWebController {
 	@RequestMapping ("/eventList")
 	public String listarEventos (Model model ) {
 		List <Evento> listaEventos = servicio.buscarTodo();
-		
+		// System.out.println(listaEventos);
 		model.addAttribute("listaEventos", listaEventos);
 		return "/moduloEventos/eventList"; // file html eventList
 	}

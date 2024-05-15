@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface EventoRepositorio extends CrudRepository<Evento, Integer> {
 
-	@Query (value = "SELECT a FROM Evento a WHERE a.tituloEvento=?1")
+	@Query (value = "SELECT e FROM Evento e WHERE e.tituloEvento=?1")
 	public List<Evento> buscarEventosPorTitulo (String titulo);
 	
 }

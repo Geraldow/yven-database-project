@@ -45,7 +45,7 @@ import lombok.experimental.SuperBuilder;
     @NamedQuery(name = "Evento.findByPrecioEntrada", query = "SELECT e FROM Evento e WHERE e.precioEntrada = :precioEntrada"),
     @NamedQuery(name = "Evento.findByCatering", query = "SELECT e FROM Evento e WHERE e.catering = :catering"),
     @NamedQuery(name = "Evento.findByPresupuesto", query = "SELECT e FROM Evento e WHERE e.presupuesto = :presupuesto"),
-    @NamedQuery(name = "Evento.findByOrganizadorId", query = "SELECT e FROM Evento e WHERE e.organizadorId = :organizadorId")
+    //NamedQuery(name = "Evento.findByOrganizadorId", query = "SELECT e FROM Evento e WHERE e.organizadorId = :organizadorId")
 })
 
 public class Evento implements Serializable {
@@ -93,17 +93,13 @@ public class Evento implements Serializable {
 	@Column(name = "presupuesto")
 		private Double presupuesto;
 	
-	@Column(name = "organizadorId")
-		private Integer organizadorId;
+	//@Column(name = "organizadorId")
+		//private Integer organizadorId;
 	
 	public Evento() {
 		
 	}
 	
-	public Evento ( Integer idEvento, String tituloEvento) {
-		this.idEvento = idEvento;
-		this.tituloEvento = tituloEvento;
-	}
 	
 		  public Integer getIdEvento() {
 			    return idEvento;
@@ -209,11 +205,58 @@ public class Evento implements Serializable {
 		    this.presupuesto = presupuesto;
 		  }
 
-		  public Integer getOrganizadorId() {
-		    return organizadorId;
-		  }
+		 // public Integer getOrganizadorId() {
+		 //   return organizadorId;
+		 // }
 
-		  public void setOrganizadorId(Integer organizadorId) {
-		    this.organizadorId = organizadorId;
-		  }
+		 // public void setOrganizadorId(Integer organizadorId) {
+		  //  this.organizadorId = organizadorId;
+		  //}
+		  
+			public Evento ( Integer idEvento, 
+							String tituloEvento, 
+							String descripcionEvento, 
+							String ubicacionEvento, 
+							String tipoEvento, 
+							String fechaEvento, 
+							String horaInicio, 
+							String horaFinalizacion, 
+							Integer capacidadEvento, 
+							Boolean estadoEvento,
+							Double precioEntrada,
+							String catering,
+							Double presupuesto) {
+				this.idEvento = idEvento;
+				this.tituloEvento = tituloEvento;
+				this.descripcionEvento = descripcionEvento;
+				this.ubicacionEvento = ubicacionEvento;
+				this.tipoEvento = tipoEvento;
+				this.fechaEvento = fechaEvento;
+				this.horaInicio = horaInicio;
+				this.horaFinalizacion = horaFinalizacion;
+				this.capacidadEvento = capacidadEvento;
+				this.estadoEvento = estadoEvento;
+				this.precioEntrada = precioEntrada;
+				this.catering = catering;
+				this.presupuesto = presupuesto;
+			}
+
+			@Override
+			public String toString() {
+				return "Evento [idPelicula=" + idEvento + 
+						", tituloEvento=" + tituloEvento + 
+						", descripcionEvento=" + descripcionEvento + 
+						", ubicacionEvento=" + ubicacionEvento + 
+						", tipoEvento=" + tipoEvento + 
+						", fechaEvento=" + fechaEvento + 
+						", horaInicio=" + horaInicio + 
+						", horaFinalizacion=" + horaFinalizacion + 
+						", capacidadEvento=" + capacidadEvento + 
+						", estadoEvento=" + estadoEvento + 
+						", precioEntrada=" + precioEntrada + 
+						", catering=" + catering + 
+						", presupuesto=" + presupuesto + 
+						"]";
+			}
+		  
 }	
