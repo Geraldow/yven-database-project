@@ -46,7 +46,6 @@ import lombok.experimental.SuperBuilder;
     @NamedQuery(name = "Evento.findByCatering", query = "SELECT e FROM Evento e WHERE e.catering = :catering"),
     @NamedQuery(name = "Evento.findByPresupuesto", query = "SELECT e FROM Evento e WHERE e.presupuesto = :presupuesto"),
     @NamedQuery(name = "Evento.findByOrganizadorId", query = "SELECT e FROM Evento e WHERE e.organizadorId = :organizadorId")
-	
 })
 
 public class Evento implements Serializable {
@@ -63,7 +62,6 @@ public class Evento implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "descripcionEvento")
 	private String descripcionEvento;
-	
 	
 	@Column(name= "ubicacionEvento")
 	private String ubicacionEvento;
@@ -107,9 +105,9 @@ public class Evento implements Serializable {
 		this.tituloEvento = tituloEvento;
 	}
 	
-	  public Integer getIdEvento() {
-		    return idEvento;
-		  }
+		  public Integer getIdEvento() {
+			    return idEvento;
+			  }
 
 		  public void setIdEvento(Integer idEvento) {
 		    this.idEvento = idEvento;

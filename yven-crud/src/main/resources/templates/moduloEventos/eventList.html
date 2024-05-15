@@ -7,8 +7,8 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Peliculas</h1>
-		<a th:href="@{/peliculas/nuevo}">Listado de eventos</a>
+		<h1>Eventos</h1>
+		<a th:href="@{/eventos/nuevo}">Listado de eventos</a>
 		<br/>
 		<table border="1" cellpadding="10">
 			<thead>
@@ -39,8 +39,8 @@
 					<td th:text="${pelicula.genero}">Genero</td>
 					<td th:text="${pelicula.formato}">Formato</td>
 					<td th:text="${pelicula.sinopsis}">Sinopsis</td>
-					<td><a th:href="@{/peliculas/actualizar/{id}(id=${pelicula.idPelicula})}">Actualizar</a>
-					<td><a th:href="@{/peliculas/eliminar/{id}(id=${pelicula.idPelicula})}">Eliminar</a>
+					<td><a th:href="@{/eventos/actualizar/{id}(id=${pelicula.idPelicula})}">Actualizar</a>
+					<td><a th:href="@{/eventos/eliminar/{id}(id=${pelicula.idPelicula})}">Eliminar</a>
 				</tr>
 			</tbody>
 		</table>

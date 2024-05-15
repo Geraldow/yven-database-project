@@ -22,12 +22,12 @@ public class EventoWebController {
 	@Autowired
 	private EventoServicio servicio;
 	
-	@RequestMapping ("/listarTodo")
+	@RequestMapping ("/eventList")
 	public String listarEventos (Model model ) {
 		List <Evento> listaEventos = servicio.buscarTodo();
 		
 		model.addAttribute("listaEventos", listaEventos);
-		return "/moduloEventos/listarTodo";
+		return "/moduloEventos/eventList";
 	}
 	
 	@RequestMapping("/nuevo")
@@ -40,8 +40,7 @@ public class EventoWebController {
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST)
 	public String crearEvento(@ModelAttribute("evento") Evento evento) {
 		servicio.crear(evento);
-		return "redirect:/eventos/listarTodo";
-		
+		return "redirect:/eventos/eventList";
 	}
 	
 	@RequestMapping(value = "/actualizar/{id}")
@@ -50,13 +49,12 @@ public class EventoWebController {
 		Evento evento= servicio.buscarPorId(id);
 		mav.addObject("evento", evento);
 		return mav;
-
 	}
 	
 	@RequestMapping(value="/eliminar/{id}")
 	public  String eliminarEvento(@PathVariable(name = "id") int id) {
 		servicio.borrarPorId(id);
-		return "redirect:/eventos/listarTodo";
+		return "redirect:/eventos/eventList";
 	}
 	
 }
