@@ -9,68 +9,78 @@
     <main>
         <section class="events-list">
             <h2 align="center">Organizar evento</h2>
-            <table align="center">
-                <thead>
-					<tr>
-					   <td>Mis eventos</td>
-					</tr>
-                </thead>
-                <tbody>
-					<tr>
-					   <td>Titulo del Evento: </td>
-					   <td><input type="text" th:field="*{tituloEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Descripción del evento:</td>
-					   <td><input type="text" th:field="*{descripcionEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Ubicación del evento</td>
-					   <td><input type="text" th:field="*{ubicacionEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Tipo de evento:</td>
-					   <td><input type="text" th:field="*{tipoEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Fecha del evento :</td>
-					   <td><input type="text" th:field="*{fechaEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Hora de inicio del evento:</td>
-					   <td><input type="text" th:field="*{horaInicio}"></td>
-					</tr>
-					<tr>
-					   <td>Hora de finalización del evento:</td>
-					   <td><input type="text" th:field="*{horaFinalizacion}"></td>
-					</tr>
-					<tr>
-					   <td>Capacidad del evento:</td>
-					   <td><input type="text" th:field="*{capacidadEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Estado del evento:</td>
-					   <td><input type="text" th:field="*{estadoEvento}"></td>
-					</tr>
-					<tr>
-					   <td>Precio de la entrada:</td>
-					   <td><input type="text" th:field="*{precioEntrada}"></td>
-					</tr>
-					<tr>
-					   <td>Catering:</td>
-					   <td><input type="text" th:field="*{catering}"></td>
-					</tr>
-					<tr>
-					   <td>Presupuesto:</td>
-					   <td><input type="text" th:field="*{presupuesto}"></td>
-					</tr>
-					<tr>
-					   <td>Proveedor:</td>
-					   <td><input type="text" th:field="*{organizadorId}"></td>
-					</tr>
-                </tbody>
-            </table>
-			<button align="center">Organizar evento</button>
+			
+				
+		<form action="#" th:action="@{/eventos/guardar}" th:object="${evento}" method="post">
+			           <table align="center">
+			               <thead>
+							<tr>
+							   <td>Nuevo evento:</td>
+							</tr>
+			               </thead>
+			               <tbody>
+							<tr>
+							   <td>Titulo del Evento: </td>
+							   <td><input type="text" th:field="*{tituloEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Descripción del evento:</td>
+							   <td><input type="text" th:field="*{descripcionEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Ubicación del evento</td>
+							   <td><input type="text" th:field="*{ubicacionEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Tipo de evento:</td>
+							   <td><input type="text" th:field="*{tipoEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Fecha del evento :</td>
+							   <td><input type="text" th:field="*{fechaEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Hora de inicio del evento:</td>
+							   <td><input type="text" th:field="*{horaInicio}"></td>
+							</tr>
+							<tr>
+							   <td>Hora de finalización del evento:</td>
+							   <td><input type="text" th:field="*{horaFinalizacion}"></td>
+							</tr>
+							<tr>
+							   <td>Capacidad del evento:</td>
+							   <td><input type="text" th:field="*{capacidadEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Estado del evento:</td>
+							   <td><input type="text" th:field="*{estadoEvento}"></td>
+							</tr>
+							<tr>
+							   <td>Precio de la entrada:</td>
+							   <td><input type="text" th:field="*{precioEntrada}"></td>
+							</tr>
+							<tr>
+							   <td>Catering:</td>
+							   <td><input type="text" th:field="*{catering}"></td>
+							</tr>
+							<tr>
+							   <td>Presupuesto:</td>
+							   <td><input type="text" th:field="*{presupuesto}"></td>
+							</tr>
+							<tr>
+							   <td>Proveedor:</td>
+							   <td><input type="text" th:field="*{organizadorId}"></td>
+							</tr>
+							
+							<tr>
+								<td>
+									<button align="center" type="submit">Organizar evento</button>
+								</td>
+							</tr>
+
+			               </tbody>
+			           </table>
+		</form>
         </section>
     </main>
     </body>
