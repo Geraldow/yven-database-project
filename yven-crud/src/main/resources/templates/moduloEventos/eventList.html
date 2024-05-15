@@ -31,16 +31,22 @@
 			</thead>
 			<tbody>
 				<tr th:each="pelicula : ${listaPeliculas}">
-					<td th:text="${pelicula.idPelicula}">Id</td>
-					<td th:text="${pelicula.nombre}">Nombre</td>
-					<td th:text="${pelicula.duracion}">Duracion</td>
-					<td th:text="${pelicula.clasificacion}">Clasificacion</td>
-					<td th:text="${pelicula.idioma}">Idioma</td>
-					<td th:text="${pelicula.genero}">Genero</td>
-					<td th:text="${pelicula.formato}">Formato</td>
-					<td th:text="${pelicula.sinopsis}">Sinopsis</td>
-					<td><a th:href="@{/eventos/actualizar/{id}(id=${pelicula.idPelicula})}">Actualizar</a>
-					<td><a th:href="@{/eventos/eliminar/{id}(id=${pelicula.idPelicula})}">Eliminar</a>
+					<td th:text="${evento.idEvento}">Id</td>
+					<td th:text="${evento.tituloEvento}">Titulo</td>
+					<td th:text="${evento.descripcionEvento}">Descripción</td>
+					<td th:text="${evento.ubicacionEvento}">Ubicación</td>
+					<td th:text="${evento.tipoEvento}">Tipo Evento</td>
+					<td th:text="${evento.fechaEvento}">Fecha del evento</td>
+					<td th:text="${evento.horaInicio}">Inicio</td>
+					<td th:text="${evento.horaFinalizacion}">Finalización</td>
+					<td th:text="${evento.capacidadEvento}">Capacidad</td>
+					<td th:text="${evento.estadoEvento}">Estado</td>
+					<td th:text="${evento.precioEntrada}">Precio</td>
+					<td th:text="${evento.catering}">Catering</td>
+					<td th:text="${evento.presupuesto}">presupuesto</td>
+					<td th:text="${evento.organizadorId}">Proveedor</td>
+					<td><a th:href="@{/eventos/actualizar/{id}(id=${evento.idEvento})}">Actualizar</a>
+					<td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a>
 				</tr>
 			</tbody>
 		</table>
