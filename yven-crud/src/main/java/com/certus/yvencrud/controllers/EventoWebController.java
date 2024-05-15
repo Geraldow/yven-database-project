@@ -27,26 +27,26 @@ public class EventoWebController {
 		List <Evento> listaEventos = servicio.buscarTodo();
 		
 		model.addAttribute("listaEventos", listaEventos);
-		return "/moduloEventos/eventList";
+		return "/moduloEventos/eventList"; // file html eventList
 	}
 	
 	@RequestMapping("/nuevo")
 	public String nuevoEvento(Model model) {
 		Evento evento = new Evento();
 		model.addAttribute("evento",evento);
-		return "/moduloEventos/nuevoEvento";
+		return "/moduloEventos/eventNew"; // file html eventNew
 	}
 	
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST)
 	public String crearEvento(@ModelAttribute("evento") Evento evento) {
 		servicio.crear(evento);
-		return "redirect:/eventos/eventList";
+		return "redirect:/eventos/eventList"; // file html eventList
 	}
 	
 	@RequestMapping(value = "/actualizar/{id}")
 	public ModelAndView editarEvento(@PathVariable(name= "id") int id) {
-		ModelAndView mav= new ModelAndView("/moduloEventos/editarEvento");
-		Evento evento= servicio.buscarPorId(id);
+		ModelAndView mav= new ModelAndView("/moduloEventos/eventEdit"); // file html eventEdit
+		Evento evento= servicio.buscarPorId(id); 
 		mav.addObject("evento", evento);
 		return mav;
 	}
