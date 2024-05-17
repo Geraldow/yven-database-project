@@ -10,5 +10,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface PersonaRepositorio extends CrudRepository<Persona, Integer> {
 
 	@Query (value = "SELECT p FROM Persona p WHERE p.numeroDocumento=?1")
-	public List<Persona> buscarPersonasPorNumeroDocumento (String numeroDocumento);
+	public List<Persona> buscarPersonasPorNumeroDocumento (Integer numeroDocumento);
 }

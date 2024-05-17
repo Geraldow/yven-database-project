@@ -25,15 +25,14 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 
-
 @SuppressWarnings("serial")
 @Entity
-@Table ( name = "persona")
+@Table(name = "persona")
 @XmlRootElement
-@NamedQueries ({
-	@NamedQuery(name = "Persona.findAll", query = "SELECT p FROM Persona p"),
-    @NamedQuery(name = "Persona.findByNumeroDocumento", query = "SELECT p FROM Persona p WHERE p.numeroDocumento = :numeroDocumento"),
+@NamedQueries({
+    @NamedQuery(name = "Persona.findAll", query = "SELECT p FROM Persona p"),
     @NamedQuery(name = "Persona.findByTipoDocumento", query = "SELECT p FROM Persona p WHERE p.tipoDocumento = :tipoDocumento"),
+    @NamedQuery(name = "Persona.findByNumeroDocumento", query = "SELECT p FROM Persona p WHERE p.numeroDocumento = :numeroDocumento"),
     @NamedQuery(name = "Persona.findByPrimerApellido", query = "SELECT p FROM Persona p WHERE p.primerApellido = :primerApellido"),
     @NamedQuery(name = "Persona.findBySegundoApellido", query = "SELECT p FROM Persona p WHERE p.segundoApellido = :segundoApellido"),
     @NamedQuery(name = "Persona.findByNombres", query = "SELECT p FROM Persona p WHERE p.nombres = :nombres"),
@@ -44,136 +43,137 @@ import lombok.experimental.SuperBuilder;
 })
 
 public class Persona implements Serializable {
-	
-	@Id
-	@GeneratedValue ( strategy = GenerationType.IDENTITY )
-	@Basic ( optional = false ) // CAMPO OBLIGATORIO
-	@Column ( name = "numeroDocumento")
-	private Integer numeroDocumento;
-	
-	@Column(name = "tipoDocumento")
-	private String tipoDocumento;
-	
-	@Basic(optional = false)
-	@Column(name = "primerApellido")
-	private String primerApellido;
-	
-	@Column(name= "segundoApellido")
-	private String segundoApellido;
-	
-	@Column(name = "nombres")
-	private String nombres;
-	
-	@Column(name="fechaNacimiento")
-	private String fechaNacimiento;
-	
-	@Column(name = "sexo")
-	private String sexo;
-	
-	@Column(name = "estadoCivil")
-		private String estadoCivil;
-	
-	@Column(name = "ubigeo")
-		private Integer ubigeo;
-	
-	public Persona() {
-		
-	}
-	
-	public Persona ( Integer numeroDocumento, String tipoDocumento) {
-		this.numeroDocumento = numeroDocumento;
-		this.tipoDocumento = tipoDocumento;
-	}
-	
-	public String getTipoDocumento() {
-	    return tipoDocumento;
-	}
 
-	public void setTipoDocumento(String tipoDocumento) {
-	    this.tipoDocumento = tipoDocumento;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Column(name = "tipoDocumento")
+    private String tipoDocumento;
 
-	public int getNumeroDocumento() {
-	    return numeroDocumento;
-	}
+    @Column(name = "numeroDocumento")
+    private Integer numeroDocumento;
 
-	public void setNumeroDocumento(int numeroDocumento) {
-	    this.numeroDocumento = numeroDocumento;
-	}
+    @Column(name = "primerApellido")
+    private String primerApellido;
 
-	public String getPrimerApellido() {
-	    return primerApellido;
-	}
-	
-	public void setPrimerApellido(String primerApellido) {
-	    this.primerApellido = primerApellido;
-	}
-	
-	public String getSegundoApellido() {
-	    return segundoApellido;
-	}
+    @Column(name = "segundoApellido")
+    private String segundoApellido;
 
-	public void setSegundoApellido(String segundoApellido) {
-	    this.segundoApellido = segundoApellido;
-	}
+    @Column(name = "nombres")
+    private String nombres;
 
-	public String getNombres() {
-	    return nombres;
-	}
+    @Column(name = "fechaNacimiento")
+    private String fechaNacimiento;
 
-	public void setNombres(String nombres) {
-	    this.nombres = nombres;
-	}
+    @Column(name = "sexo")
+    private String sexo;
 
-	public String getFechaNacimiento() {
-	    return fechaNacimiento;
-	}
+    @Column(name = "estadoCivil")
+    private String estadoCivil;
 
-	public void setFechaNacimiento(String fechaNacimiento) {
-	    this.fechaNacimiento = fechaNacimiento;
-	}
+    @Column(name = "ubigeo")
+    private Integer ubigeo;
 
-	public String getSexo() {
-	    return sexo;
-	}
+    // Getters and Setters
 
-	public void setSexo(String sexo) {
-	    this.sexo = sexo;
-	}
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
 
-	public String getEstadoCivil() {
-	    return estadoCivil;
-	}
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
 
-	public void setEstadoCivil(String estadoCivil) {
-	    this.estadoCivil = estadoCivil;
-	}
+    public Integer getNumeroDocumento() {
+        return numeroDocumento;
+    }
 
-	public Integer getUbigeo() {
-	    return ubigeo;
-	}
+    public void setNumeroDocumento(Integer numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
 
-	public void setUbigeo(Integer ubigeo) {
-	    this.ubigeo = ubigeo;
-	}
-	
-    public Persona(String tipoDocumento, 
-    				int numeroDocumento, 
-    				String primerApellido, 
-    				String segundoApellido, 
-    				String nombres, 
-    				String fechaNacimiento,
-    				String sexo, 
-    				String estadoCivil, 
-    				int ubigeo) {
-						 this.tipoDocumento = tipoDocumento;
-						 this.numeroDocumento = numeroDocumento;
-						 this.primerApellido = primerApellido;
-						 this.segundoApellido = segundoApellido;
-						 this.nombres = nombres;
-						 this.fechaNacimiento = fechaNacimiento;
-						 this.sexo = sexo;
-						 this.estadoCivil = estadoCivil;
-						 this.ubigeo = ubigeo;
-						 }
-}	
+    public String getPrimerApellido() {
+        return primerApellido;
+    }
+
+    public void setPrimerApellido(String primerApellido) {
+        this.primerApellido = primerApellido;
+    }
+
+    public String getSegundoApellido() {
+        return segundoApellido;
+    }
+
+    public void setSegundoApellido(String segundoApellido) {
+        this.segundoApellido = segundoApellido;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public Integer getUbigeo() {
+        return ubigeo;
+    }
+
+    public void setUbigeo(Integer ubigeo) {
+        this.ubigeo = ubigeo;
+    }
+    
+    public Persona() {}
+
+    // Constructor
+    public Persona(String tipoDocumento, Integer numeroDocumento, String primerApellido, String segundoApellido, String nombres, String fechaNacimiento, String sexo, String estadoCivil, Integer ubigeo) {
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+        this.nombres = nombres;
+        this.fechaNacimiento = fechaNacimiento;
+        this.sexo = sexo;
+        this.estadoCivil = estadoCivil;
+        this.ubigeo = ubigeo;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [tipoDocumento=" + tipoDocumento +
+                ", numeroDocumento=" + numeroDocumento +
+                ", primerApellido=" + primerApellido +
+                ", segundoApellido=" + segundoApellido +
+                ", nombres=" + nombres +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", sexo=" + sexo +
+                ", estadoCivil=" + estadoCivil +
+                ", ubigeo=" + ubigeo +
+                "]";
+    }
+}

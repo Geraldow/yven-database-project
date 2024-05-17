@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listar personas - Yven</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Personas</h1>
+		<a th:href="@{/personas/nuevo}">Crear nueva persona</a>
+		<br/>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Tipo Documento</th>
+					<th>Número Documento</th>
+					<th>Primer Apellido</th>
+					<th>Segundo Apellido</th>
+					<th>Nombres</th>
+					<th>Fecha de Nacimiento</th>
+					<th>Sexo</th>
+					<th>Estado Civil</th>
+					<th>Ubigeo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="persona : ${listaPersonas}">
+					<td th:text="${persona.tipoDocumento}">Tipo Documento</td>
+					<td th:text="${persona.numeroDocumento}">Número Documento</td>
+					<td th:text="${persona.primerApellido}">Primer Apellido</td>
+					<td th:text="${persona.segundoApellido}">Segundo Apellido</td>
+					<td th:text="${persona.nombres}">Nombres</td>
+					<td th:text="${persona.fechaNacimiento}">Fecha de Nacimiento</td>
+					<td th:text="${persona.sexo}">Sexo</td>
+					<td th:text="${persona.estadoCivil}">Estado Civil</td>
+					<td th:text="${persona.ubigeo}">Ubigeo</td>
+					<td><a th:href="@{/personas/actualizar/{id}(id=${persona.numeroDocumento})}">Actualizar</a></td>
+					<td><a th:href="@{/personas/eliminar/{id}(id=${persona.numeroDocumento})}">Eliminar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <title>Crear tarjeta - Yven</title>
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+</head>
+<body>
+    <main>
+        <section class="card-form">
+            <h2 align="center">Registrar tarjeta</h2>
+			
+		<form action="#" th:action="@{/tarjetas/guardar}" th:object="${tarjeta}" method="post">
+			<table align="center">
+				<thead>
+					<tr>
+						<td>Nueva tarjeta:</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Tipo de Tarjeta: </td>
+						<td><input type="text" th:field="*{tipoTarjeta}"></td>
+					</tr>
+					<tr>
+						<td>Nombre de la Tarjeta:</td>
+						<td><input type="text" th:field="*{nombreTarjeta}"></td>
+					</tr>
+					<tr>
+						<td>Número de la Tarjeta:</td>
+						<td><input type="text" th:field="*{numeroTarjeta}"></td>
+					</tr>
+					<tr>
+						<td>Tiempo de Expiración:</td>
+						<td><input type="text" th:field="*{tiempoExpiracion}"></td>
+					</tr>
+					<tr>
+						<td>Código de Seguridad:</td>
+						<td><input type="text" th:field="*{codigoSeguridad}"></td>
+					</tr>
+					<tr>
+						<td>CVC:</td>
+						<td><input type="text" th:field="*{cvc}"></td>
+					</tr>
+					<tr>
+						<td>CVV:</td>
+						<td><input type="text" th:field="*{cvv}"></td>
+					</tr>
+					<tr>
+						<td>Dirección:</td>
+						<td><input type="text" th:field="*{direccion}"></td>
+					</tr>
+					<tr>
+						<td>Ciudad:</td>
+						<td><input type="text" th:field="*{ciudad}"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<button type="submit">Registrar tarjeta</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+        </section>
+    </main>
+</body>
+</html>

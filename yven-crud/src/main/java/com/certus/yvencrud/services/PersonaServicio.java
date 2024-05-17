@@ -34,7 +34,6 @@ public class PersonaServicio {
 		
 		Persona personaActualizado = repositorio.save(personaActualizar);
 		return personaActualizado;
-	
 	}
 
 	public Persona buscarPorId(Integer id) {

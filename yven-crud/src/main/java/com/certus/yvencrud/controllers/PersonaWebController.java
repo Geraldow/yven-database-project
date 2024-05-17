@@ -29,20 +29,20 @@ public class PersonaWebController {
 		List <Persona> listaPersonas = servicio.buscarTodo();
 		
 		model.addAttribute("listaPersonas", listaPersonas);
-		return "/moduloPersonas/personList"; // file html eventList
+		return "/moduloPersonas/personList"; // file html personList
 	}
 	
 	@RequestMapping("/nuevo")
 	public String nuevaPersona(Model model) {
 		Persona persona = new Persona();
 		model.addAttribute("persona",persona);
-		return "/moduloPersonas/personNew"; // file html eventNew
+		return "/moduloPersonas/personNew"; // file html personNew
 	}
 	
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST)
 	public String crearPersona(@ModelAttribute("persona") Persona persona) {
 		servicio.crear(persona);
-		return "redirect:/personas/personList"; // file html eventList
+		return "redirect:/personas/personList"; // file html personList
 	}
 	
 	@RequestMapping(value = "/actualizar/{id}")
