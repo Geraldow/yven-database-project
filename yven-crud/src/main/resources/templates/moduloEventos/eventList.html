@@ -3,14 +3,49 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
 <title>Listar eventos - Yven</title>
+<style>
+	body {
+		background: #201A30;
+		color: white;
+	}
+	
+	h2 {
+		margin: 20px 0; 
+		width: 30%; 
+    	font-weight: 700;
+    	border-radius: 10px;
+    	color: white;
+    	background: #49A9A4;
+	}
+	
+	 .title-evento {
+		text-decoration: none;
+		font-size: 20px;
+		border: none;
+		background: #8A5796;
+		color: white;
+		border-radius: 5px;
+		padding: 3px 5px;
+	}
+	
+	.title-evento:hover {
+		text-decoration: none;
+		background: #BA5796;
+		color: white;
+	}
+	
+	
+</style>	
 </head>
 <body>
 	<div align="center">
-		<h1>Eventos</h1>
-		<a th:href="@{/eventos/nuevo}">Crear nuevo evento</a>
-		<br/>
-		<table border="1" cellpadding="10">
+		<h2>Eventos</h2>	
+		<a th:href="@{/eventos/nuevo}" class="title-evento">Crear nuevo evento <i class="fa-solid fa-caret-right"></i></a>		
+		<br/><br>
+		<table border="1" cellpadding="20">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -26,10 +61,10 @@
 					<th>Precio</th>
 					<th>Catering</th>
 					<th>Presupuesto</th>
-					<!--<th>Proveedor</th>					-->
+					<!--<th>Proveedor</th>	-->
 				</tr>
 			</thead>
-			<tbody>
+			<tbody>			
 				<tr th:each="evento : ${listaEventos}">
 					<td th:text="${evento.idEvento}">Id</td>
 					<td th:text="${evento.tituloEvento}">Titulo</td>
