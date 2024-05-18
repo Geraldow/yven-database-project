@@ -44,7 +44,7 @@ public class EventoWebController {
 	}
 	
 	@RequestMapping(value = "/actualizar/{id}")
-	public ModelAndView editarEvento(@PathVariable(name= "id") int id) {
+	public ModelAndView editarEvento(@PathVariable(name = "id") int id) {
 		ModelAndView mav= new ModelAndView("/moduloEventos/eventEdit"); // file html eventEdit
 		Evento evento= servicio.buscarPorId(id); 
 		mav.addObject("evento", evento);

@@ -3,15 +3,87 @@
 <head>
 	<meta charset="UTF-8">
     <title>Crear tarjeta - Yven</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+  	<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>  	
     <link rel="stylesheet" href="../static/assets/css/style.css">
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	
+    	body {
+    		background: #201A30;
+    		color: white;
+    		font-family: 'Montserrat';
+    	}
+    	
+    	h1 {
+    		width: 30%;
+    		padding: 5px 0px;
+    		margin: 30px auto;
+    		font-weight: 700;
+    		background: #CCCC;
+    		border-radius: 10px;
+    		color: white;
+    		background: #49A9A4;
+    	}
+    	
+    	thead {
+    		align-item: center;
+    		font-size: 1.5em;
+    	}    	
+
+    	
+    	 .table-form {        	
+            margin: 0 auto;            
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid grey;
+        }
+               
+        
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            color: #fff;
+        }
+        
+        td input{
+            width: calc(100% - 20px);
+            padding: 5px 10px;
+            border: solid #ccc;
+            border-radius: 5px;
+            border: none;
+        }
+        
+        .button-registrar {        
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #49A9A4;
+            color: white;
+        }      
+        
+        .button-registrar:hover {
+        	background: #49A9B4;
+        }
+       
+    </style>
 </head>
 <body>
     <main>
         <section class="card-form">
-            <h2 align="center">Registrar tarjeta</h2>
+            <h1 align="center">Registrar tarjeta</h1>
 			
 		<form action="#" th:action="@{/tarjetas/guardar}" th:object="${tarjeta}" method="post">
-			<table align="center">
+			<table align="center" class="table-dark table-form">
 				<thead>
 					<tr>
 						<td>Nueva tarjeta:</td>
@@ -56,7 +128,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
-							<button type="submit">Registrar tarjeta</button>
+							<button type="submit" class="button-registrar">Registrar tarjeta <i class="fa-solid fa-circle-check"></i></button>
 						</td>
 					</tr>
 				</tbody>

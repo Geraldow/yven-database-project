@@ -4,13 +4,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Listar tarjetas - Yven</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body {
+		font-family: 'Montserrat';
+		background:  #201A30;
+	}
+	
+	.title-tarjeta {
+		color: white;
+		font-weight: 700;
+		margin: 30px auto;
+		background: #49A9A4;
+		width: 30%;
+		border-radius: 10px;
+	}
+	
+	 .button-new {
+		text-decoration: none;
+		font-size: 20px;
+		border: none;
+		background: #8A5796;
+		color: white;
+		border-radius: 5px;
+		padding: 3px 10px;
+		
+		
+	}
+	
+	.button-new:hover {
+		text-decoration: none;
+		background: #BA5796;
+		color: white;
+	}
+	
+	table {		
+		width: 60%;
+		margin: 30px auto;
+		color: white;
+		text-align: center
+	}
+	
+	
+</style>
 </head>
 <body>
 	<div align="center">
-		<h1>Tarjetas</h1>
-		<a th:href="@{/tarjetas/nuevo}">Crear nueva tarjeta</a>
+		<h1 class="title-tarjeta">Tarjetas</h1>
+		<a th:href="@{/tarjetas/nuevo}" class="button-new">Crear nueva tarjeta <i class="fa-solid fa-caret-right"></i> </a> 
 		<br/>
-		<table border="1" cellpadding="10">
+		<table border="1" cellpadding="30">
 			<thead>
 				<tr>
 					<th>ID</th>
