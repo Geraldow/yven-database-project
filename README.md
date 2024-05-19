@@ -54,6 +54,7 @@ Spring Framework
   - Spring Boot Starter Thymeleaf
   - Spring Boot Starter Web
   - Spring Boot DevTools
+    
 MySQL Connector/J
 Project Lombok
 Spring Boot Starter Test
