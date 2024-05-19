@@ -13,6 +13,7 @@
         <div class="col-md-8">
             <h1 class="text-center">Editar Tarjeta</h1>
             <form action="#" th:action="@{/tarjetas/guardar}" th:object="${tarjeta}" method="post">
+				<input type="hidden" th:field="*{idTarjeta}" />
                 <table class="table table-bordered">
                     <tr>
                         <td>Tipo Tarjeta:</td>
