@@ -13,7 +13,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1 class="text-center">Editar Evento</h1>
-            <form action="#" th:action="@{/eventos/guardar	}" th:object="${evento}" method="post" >
+            <form action="#" th:action="@{/eventos/guardar}" th:object="${evento}" method="post" >
+              <input type="hidden" th:field="*{idEvento}" />
                 <table class="table table-bordered">
                     <tr>
                         <td>Titulo:</td>
@@ -62,10 +63,6 @@
                     <tr>
                         <td>Presupuesto:</td>
                         <td><input type="text" class="form-control" th:field="*{presupuesto}"></td>
-                    </tr>
-                    <tr>
-                        <td>Proveedor:</td>
-                        <td><input type="text" class="form-control" th:field="*{organizadorId}"></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center"><button type="submit" class="btn btn-dark">Guardar Cambios</button></td>

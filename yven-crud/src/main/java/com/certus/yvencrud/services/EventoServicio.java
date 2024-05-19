@@ -29,7 +29,8 @@ public class EventoServicio {
 	public Evento actualizar(Evento eventoActualizar) {
 		Evento eventoActual= repositorio.findById(eventoActualizar.getIdEvento()).get();
 		
-		eventoActual.setTituloEvento(eventoActual.getTituloEvento());
+		 eventoActual.setTituloEvento(eventoActualizar.getTituloEvento());
+	       eventoActual.setDescripcionEvento(eventoActualizar.getDescripcionEvento());
 		
 		Evento eventoActualizado = repositorio.save(eventoActualizar);
 		return eventoActualizado;
