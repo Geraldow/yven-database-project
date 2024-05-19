@@ -47,11 +47,11 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    @Column(name = "tipoDocumento")
-    private String tipoDocumento;
-
     @Column(name = "numeroDocumento")
     private Integer numeroDocumento;
+    
+    @Column(name = "tipoDocumento")
+    private String tipoDocumento;
 
     @Column(name = "primerApellido")
     private String primerApellido;
@@ -151,9 +151,9 @@ public class Persona implements Serializable {
     public Persona() {}
 
     // Constructor
-    public Persona(String tipoDocumento, Integer numeroDocumento, String primerApellido, String segundoApellido, String nombres, String fechaNacimiento, String sexo, String estadoCivil, Integer ubigeo) {
-        this.tipoDocumento = tipoDocumento;
+    public Persona(String tipoDocumento, Integer numeroDocumento, String primerApellido, String segundoApellido, String nombres, String fechaNacimiento, String sexo, String estadoCivil, Integer ubigeo) {        
         this.numeroDocumento = numeroDocumento;
+        this.tipoDocumento = tipoDocumento;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.nombres = nombres;
@@ -165,8 +165,8 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Persona [tipoDocumento=" + tipoDocumento +
-                ", numeroDocumento=" + numeroDocumento +
+        return "Persona [mumeroDocumento=" + numeroDocumento +        		
+                ", tipoDocumento=" + tipoDocumento +
                 ", primerApellido=" + primerApellido +
                 ", segundoApellido=" + segundoApellido +
                 ", nombres=" + nombres +

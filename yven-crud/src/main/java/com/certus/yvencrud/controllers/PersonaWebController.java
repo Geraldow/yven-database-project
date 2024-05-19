@@ -56,7 +56,7 @@ public class PersonaWebController {
 	@RequestMapping(value="/eliminar/{id}")
 	public  String eliminarEvento(@PathVariable(name = "id") int id) {
 		servicio.borrarPorId(id);
-		return "redirect:/eventos/eventList";
+		return "redirect:/personas/personList";
 	}
 	
 }
