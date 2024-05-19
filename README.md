@@ -56,7 +56,9 @@ Spring Framework
   - Spring Boot DevTools
     
 MySQL Connector/J
+
 Project Lombok
+
 Spring Boot Starter Test
 
 
