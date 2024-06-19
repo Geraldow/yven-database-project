@@ -290,7 +290,8 @@ CREATE TABLE detalles_pago (
     
 );
 
-
+## Colecciones Postman (API)
+https://pastebin.com/vey8tQJx
 
 ## Equipo 
 - Geraldo Jaramillo Florida [71992956@certus.edu.pe]
