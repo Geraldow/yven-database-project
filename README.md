@@ -291,8 +291,14 @@ CREATE TABLE detalles_pago (
 );
 
 ## Colecciones Postman (API)
+### Event
 https://pastebin.com/vey8tQJx
 
+### Card
+https://pastebin.com/pGzm7AbT
+
+### User
+https://pastebin.com/vUGudB1h
 ## Equipo 
 - Geraldo Jaramillo Florida [71992956@certus.edu.pe]
 - Dayne Fiorella Ruiz Fernandez [73987271@certus.edu.pe]
