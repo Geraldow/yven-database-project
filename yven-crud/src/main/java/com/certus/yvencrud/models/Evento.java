@@ -22,8 +22,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @SuperBuilder
-@NoArgsConstructor
-@AllArgsConstructor
 
 
 @SuppressWarnings("serial")

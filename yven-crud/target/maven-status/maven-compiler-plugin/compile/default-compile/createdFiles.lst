@@ -1,0 +1,8 @@
+com\certus\yvencrud\config\SecurityConfig.class
+com\certus\yvencrud\models\Tarjeta$TarjetaBuilderImpl.class
+com\certus\yvencrud\models\Evento$EventoBuilder.class
+com\certus\yvencrud\config\MvcConfig.class
+com\certus\yvencrud\models\Evento$EventoBuilderImpl.class
+com\certus\yvencrud\models\Tarjeta$TarjetaBuilder.class
+com\certus\yvencrud\models\Persona$PersonaBuilderImpl.class
+com\certus\yvencrud\models\Persona$PersonaBuilder.class
