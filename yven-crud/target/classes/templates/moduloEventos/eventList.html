@@ -1,90 +1,132 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
-<title>Listar eventos - Yven</title>
-<style>
-	body {
-		background: #201A30;
-		color: white;
-	}
-	
-	h2 {
-		margin: 50px 0; 
-		width: 30%; 
-    	font-weight: 700;
-    	border-radius: 10px;
-    	color: white;
-    	background: #49A9A4;
-	}
-	
-	 .title-evento {
-		text-decoration: none;
-		font-size: 20px;
-		border: none;
-		background: #8A5796;
-		color: white;
-		border-radius: 5px;
-		padding: 3px 5px;
-	}
-	
-	.title-evento:hover {
-		text-decoration: none;
-		background: #BA5796;
-		color: white;
-	}
-	
-	
-</style>	
+	<meta charset="UTF-8">
+	<title>Tarjetas</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+	<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+	<style>
+		.bg-primary {
+            background: #370C94;
+        }
+
+        .bg-secondary {
+            background: #C41BA2;
+        }
+
+        .bg-dark-transparent {
+            background: rgba(27, 27, 27, 0.6);
+        }
+
+        .bg-secondary:hover {
+            background: #C41BA2;
+        }
+	</style>
 </head>
-<body>
-	<div align="center">
-		<h2>Eventos</h2>	
-		<a th:href="@{/eventos/nuevo}" class="title-evento">Crear nuevo evento <i class="fa-solid fa-caret-right"></i></a>		
-		<br/><br>
-		<table border="1" cellpadding="20">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Titulo</th>
-					<th>Descripción</th>
-					<th>Ubicación</th>
-					<th>Tipo</th>
-					<th>Fecha</th>
-					<th>Inicio</th>
-					<th>Finalización</th>
-					<th>Capacidad</th>
-					<th>Estado</th>
-					<th>Precio</th>
-					<th>Catering</th>
-					<th>Presupuesto</th>
-					<!--<th>Proveedor</th>	-->
-				</tr>
-			</thead>
-			<tbody>			
-				<tr th:each="evento : ${listaEventos}">
-					<td th:text="${evento.idEvento}">Id</td>
-					<td th:text="${evento.tituloEvento}">Titulo</td>
-					<td th:text="${evento.descripcionEvento}">Descripción</td>
-					<td th:text="${evento.ubicacionEvento}">Ubicación</td>
-					<td th:text="${evento.tipoEvento}">Tipo Evento</td>
-					<td th:text="${evento.fechaEvento}">Fecha del evento</td>
-					<td th:text="${evento.horaInicio}">Inicio</td>
-					<td th:text="${evento.horaFinalizacion}">Finalización</td>
-					<td th:text="${evento.capacidadEvento}">Capacidad</td>
-					<td th:text="${evento.estadoEvento}">Estado</td>
-					<td th:text="${evento.precioEntrada}">Precio</td>
-					<td th:text="${evento.catering}">Catering</td>
-					<td th:text="${evento.presupuesto}">Presupuesto</td>
-					<!-- <td th:text="${evento.organizadorId}">Proveedor</td> -->
-					<td><a th:href="@{/eventos/actualizar/{id}(id=${evento.idEvento})}">Actualizar</a>
-					<td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a>
-				</tr>
-			</tbody>
-		</table>
+<body class="bg-primary">
+
+<header class="z-40">
+	<nav id="" class="z-40 today bg-dark-transparent fixed justify-between backdrop-blur-md  mb-2 w-full">
+		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+			<a href="#" class="flex items-center hover:skew-y-3 space-x-1 rtl:space-x-reverse">
+				<img src="../images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
+				<h1 class="text-4xl font-medium text-white">YVEN</h1>
+			</a>
+			<button data-collapse-toggle="navbar-default" type="button"
+					class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none  text-gray-400 focus:ring-gray-600"
+					aria-controls="navbar-default" aria-expanded="false">
+				<span class="sr-only">Open main menu</span>
+				<svg class="w-5 h-5 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+					 viewBox="0 0 17 14">
+					<path stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						  d="M1 1h15M1 7h15M1 13h15" />
+				</svg>
+			</button>
+			<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+				<ul class="bg-transparent flex flex-col p-4 md:p-0 mt-4 items-center md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 bg-gray-800">
+					<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/index}">Inicio</a></li>
+					<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/eventos/eventList}">Eventos</a></li>
+					<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/personas/personList}">Personas</a></li>
+					<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/tarjetas/cardList}">Tarjetas</a></li>
+					<li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesión</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section class="menu-social-media fixed left-0">
+	<div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg flex flex-col w-16 justify-start shadow-sm"
+		 role="group">
+		<button type="button"
+				class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
+			<img src="../images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
+		</button>
+		<button type="button"
+				class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+			<img src="../images/equis.png" class="h-106 w-12 hover:rotate-12" alt="Imagen Twitter">
+		</button>
+		<button type="button"
+				class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+			<img src="../images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
+		</button>
+		<button type="button"
+				class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+			<img src="../images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
+		</button>
 	</div>
+</section>
+
+<div class="relative overflow-x-auto rounded mt-40">
+	<table class="mx-auto rounded mt-10 text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">
+		<div class="w-1/2 mx-auto text-center">
+			<p class="font-light font-montserrat pt-10 pb-4 text-gray-200 xs:text-4xl xl:text-4xl md:text-md lg:text-2xl sm:text-lg">
+				Tarjetas Disponibles
+			</p>
+			<div id="button-1" class="mx-auto"></div>
+		</div>
+		<thead class="text-xs text-gray-700 uppercase dark:bg-black dark:text-gray-400">
+		<tr>
+			<th scope="col" class="px-6 py-3" >ID</th>
+			<th scope="col" class="px-6 py-3" >Tipo Tarjeta</th>
+			<th scope="col" class="px-6 py-3" >Nombre Tarjeta</th>
+			<th scope="col" class="px-6 py-3" >Número Tarjeta</th>
+			<th scope="col" class="px-6 py-3" >Tiempo de Expiración</th>
+			<th scope="col" class="px-6 py-3" >Código de Seguridad</th>
+			<th scope="col" class="px-6 py-3" >CVC</th>
+			<th scope="col" class="px-6 py-3" >CVV</th>
+			<th scope="col" class="px-6 py-3" >Dirección</th>
+			<th scope="col" class="px-6 py-3" >Ciudad</th>
+			<th scope="col" class="px-6 py-3" ></th>
+			<th scope="col" class="px-6 py-3" ></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="tarjeta: ${listaTarjetas}" class="border-b bg-dark-transparent dark:border-gray-700">
+			<td class="px-6 py-4" th:text="${tarjeta.idTarjeta}">Id</td>
+			<td class="px-6 py-4" th:text="${tarjeta.tipoTarjeta}">Tipo Tarjeta</td>
+			<td class="px-6 py-4" th:text="${tarjeta.nombreTarjeta}">Nombre Tarjeta</td>
+			<td class="px-6 py-4" th:text="${tarjeta.numeroTarjeta}">Número Tarjeta</td>
+			<td class="px-6 py-4" th:text="${tarjeta.tiempoExpiracion}">Tiempo de Expiración</td>
+			<td class="px-6 py-4" th:text="${tarjeta.codigoSeguridad}">Código de Seguridad</td>
+			<td class="px-6 py-4" th:text="${tarjeta.cvc}">CVC</td>
+			<td class="px-6 py-4" th:text="${tarjeta.cvv}">CVV</td>
+			<td class="px-6 py-4" th:text="${tarjeta.direccion}">Dirección</td>
+			<td class="px-6 py-4" th:text="${tarjeta.ciudad}">Ciudad</td>
+			<td class="px-6 py-4 bg-red-800 text-white"><a th:href="@{/tarjetas/actualizar/{id}(id=${tarjeta.idTarjeta})}">Actualizar</a></td>
+			<td class="px-6 py-4 bg-red-800 text-white"><a th:href="@{/tarjetas/eliminar/{id}(id=${tarjeta.idTarjeta})}">Eliminar</a></td>
+		</tr>
+		</tbody>
+	</table>
+
+	<button type="button" class="mx-auto text-light-color bg-dark-transparent hover:bg-fuchsia-600 border border-light-color font-medium rounded-full text-sm px-6 py-2.5 text-center mb-6 flex items-center space-x-2">
+		<a th:href="@{/tarjetas/nuevo}" class="text-sm text-white">Agregar tarjeta nueva</a>
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+		</svg>
+	</button>
+</div>
+
 </body>
 </html>

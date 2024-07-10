@@ -26,16 +26,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/eventos/guardar").hasAnyRole("ADMIN", "CREADOR", "EDITOR")
                 .antMatchers("/eventos/actualizar/**").hasAnyRole("ADMIN", "EDITOR")
                 .antMatchers("/eventos/eliminar/**").hasAnyRole("ADMIN", "DEPURADOR")
+
                 .antMatchers("/personas/personList").hasAnyRole("ADMIN", "LECTOR", "CREADOR", "EDITOR", "DEPURADOR")
                 .antMatchers("/personas/personNew").hasAnyRole("ADMIN", "CREADOR")
                 .antMatchers("/personas/guardar").hasAnyRole("ADMIN", "CREADOR", "EDITOR")
                 .antMatchers("/personas/actualizar/**").hasAnyRole("ADMIN", "EDITOR")
                 .antMatchers("/personas/eliminar/**").hasAnyRole("ADMIN", "DEPURADOR")
+
                 .antMatchers("/tarjetas/cardList").hasAnyRole("ADMIN", "LECTOR", "CREADOR", "EDITOR", "DEPURADOR")
                 .antMatchers("/tarjetas/cardNew").hasAnyRole("ADMIN", "CREADOR")
                 .antMatchers("/tarjetas/guardar").hasAnyRole("ADMIN", "CREADOR", "EDITOR")
                 .antMatchers("/tarjetas/actualizar/**").hasAnyRole("ADMIN", "EDITOR")
                 .antMatchers("/tarjetas/eliminar/**").hasAnyRole("ADMIN", "DEPURADOR")
+
                 .antMatchers("/usuarios/userList").hasAnyRole("ADMIN", "LECTOR", "CREADOR", "EDITOR", "DEPURADOR")
                 .antMatchers("/usuarios/userNew").hasAnyRole("ADMIN", "CREADOR")
                 .antMatchers("/usuarios/guardar").hasAnyRole("ADMIN", "CREADOR", "EDITOR")
@@ -44,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
                 .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").defaultSuccessUrl("/bienvenida", true).permitAll()
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/home", true).permitAll()
                 .and().logout()
                 .permitAll();
     }
