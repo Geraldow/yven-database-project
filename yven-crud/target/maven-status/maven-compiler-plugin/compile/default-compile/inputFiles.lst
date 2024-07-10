@@ -1,19 +1,19 @@
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\UserRepositorio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\EventoWebController.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\TarjetaWebController.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\TarjetaServicio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\PersonaWebController.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\UserServicio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\PersonaRepositorio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\User.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\TarjetaRepositorio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\EventoServicio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Evento.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\YvenCrudApplication.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\config\SecurityConfig.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Tarjeta.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Persona.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\config\MvcConfig.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\EventoRepositorio.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\UserController.java
-C:\Users\FAIR\OneDrive\Desktop\Certus\Ciclo-IV\ISPW\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\PersonaServicio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\EventoWebController.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\EventoServicio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Tarjeta.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\PersonaWebController.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\UserController.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\User.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Persona.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\UserServicio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\controllers\TarjetaWebController.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\TarjetaServicio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\config\SecurityConfig.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\TarjetaRepositorio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\config\MvcConfig.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\EventoRepositorio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\PersonaRepositorio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\services\PersonaServicio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\models\Evento.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\repositories\UserRepositorio.java
+F:\CERTUS-ACTUAL\Implementación de Soluciones para Web\Project\yven-database-project\yven-crud\src\main\java\com\certus\yvencrud\YvenCrudApplication.java
