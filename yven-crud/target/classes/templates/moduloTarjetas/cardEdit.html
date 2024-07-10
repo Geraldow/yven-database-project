@@ -4,60 +4,140 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Editar Tarjeta - Yven</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
+<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		.bg-primary {
+			background: #370C94;
+		}
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1 class="text-center">Editar Tarjeta</h1>
-            <form action="#" th:action="@{/tarjetas/guardar}" th:object="${tarjeta}" method="post">
+		.bg-secondary {
+			background: #C41BA2;
+		}
+
+		.bg-dark-transparent {
+			background: rgba(27, 27, 27, 0.6);
+		}
+
+		.bg-secondary:hover {
+			background: #C41BA2;
+		}
+	</style>
+</head>
+<body class="bg-primary">
+
+    <header class="z-40">
+        <nav id="" class="z-40 today bg-dark-transparent fixed justify-between backdrop-blur-md  mb-2 w-full">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+                <a href="#" class="flex items-center hover:skew-y-3 space-x-1 rtl:space-x-reverse">
+                    <img src="images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
+                    <H1 class="text-4xl font-medium text-white">YVEN</H1>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none  text-gray-400 focus:ring-gray-600"
+                        aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 17 14">
+                        <path stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="bg-transparent flex flex-col p-4 md:p-0 mt-4 items-center md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 bg-gray-800">
+                        <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/index}">Inicio</a></li>
+                        <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/eventos/eventList}">Eventos</a></li>
+                        <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/personas/personList}">Personas</a></li>
+                        <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/tarjetas/cardList}">Tarjetas</a></li>
+                        <li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Social media -->
+    
+    <section class="menu-social-media fixed left-0">
+        <div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg flex flex-col w-16 justify-start shadow-sm"
+             role="group">
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
+                <img src="images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/equis.png" class="h-106 w-12 hover:rotate-12" alt="Imagen Twitter">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
+            </button>
+        </div>
+    </section><br><br><br>
+
+    
+    <div class="row mx-auto justify-content-center">
+        <div class="col-md-8">            
+            <div class="w-1/2 mx-auto text-center">
+				<p
+						class="font-light font-montserrat pt-10 pb-4 text-gray-200 xs:text-4xl xl:text-4xl md:text-md lg:text-2xl sm:text-lg">
+					Edita tu Tarjeta
+				</p>
+				<div id="button-1" class="mx-auto"></div>
+			</div>	
+            <form action="#" th:action="@{/tarjetas/guardar}" th:object="${tarjeta}" method="post" class="container text-white card-accion mx-auto max-w-xl p-4 shadow-md rounded-xl formulario mx-auto mt-6 h-full w-96 bg-dark-transparent rounded-28">
 				<input type="hidden" th:field="*{idTarjeta}" />
                 <table class="table table-bordered">
                     <tr>
                         <td>Tipo Tarjeta:</td>
-                        <td><input type="text" class="form-control" th:field="*{tipoTarjeta}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{tipoTarjeta}"></td>
                     </tr>
                     <tr>
                         <td>Nombre Tarjeta:</td>
-                        <td><input type="text" class="form-control" th:field="*{nombreTarjeta}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{nombreTarjeta}"></td>
                     </tr>
                     <tr>
                         <td>Número Tarjeta:</td>
-                        <td><input type="text" class="form-control" th:field="*{numeroTarjeta}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{numeroTarjeta}"></td>
                     </tr>
                     <tr>
                         <td>Tiempo de Expiración:</td>
-                        <td><input type="text" class="form-control" th:field="*{tiempoExpiracion}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{tiempoExpiracion}"></td>
                     </tr>
                     <tr>
                         <td>Código de Seguridad:</td>
-                        <td><input type="text" class="form-control" th:field="*{codigoSeguridad}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{codigoSeguridad}"></td>
                     </tr>
                     <tr>
                         <td>CVC:</td>
-                        <td><input type="text" class="form-control" th:field="*{cvc}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{cvc}"></td>
                     </tr>
                     <tr>
                         <td>CVV:</td>
-                        <td><input type="text" class="form-control" th:field="*{cvv}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{cvv}"></td>
                     </tr>
                     <tr>
                         <td>Dirección:</td>
-                        <td><input type="text" class="form-control" th:field="*{direccion}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{direccion}"></td>
                     </tr>
                     <tr>
                         <td>Ciudad:</td>
-                        <td><input type="text" class="form-control" th:field="*{ciudad}"></td>
+                        <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{ciudad}"></td>
                     </tr>
+                    
                     <tr>
-                        <td colspan="2" align="center"><button type="submit" class="btn btn-dark">Guardar Cambios</button></td>
+                        <td colspan="2" align="center"><br>
+							<button type="submit" class="w-full text-white bg-secondary font-bold py-2 mt-4 rounded-lg hover:bg-secondary bg-third">Guardar Cambios <i class="fa-solid fa-circle-check"></i></button><br>
+						</td><br>
                     </tr>
                 </table>
             </form>
         </div>
     </div>
-</div>
 </body>
 </html>
