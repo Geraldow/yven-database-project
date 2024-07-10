@@ -1,43 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <title>Crear cuenta - Yven</title>
     <link rel="stylesheet" href="../static/assets/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-secondary: #C41BA2;
+            --color-dark-blue: #370C94;
+            --color-third: #4442B6;
+            --color-third-opacity: #4442b61c;
+            --color-light: #F8F8F8;
+        }
+
+        body {
+            background-color: #370C94;
+            font-family: 'Montserrat';
+        }
+
+        .formulario {
+            background-color: rgba(255, 255, 255, 0.021);
+        }
+
+        .secondary {
+            color: var(--color-secondary);
+        }
+
+        button {
+            background-color: var(--color-third);
+        }
+
+        button:hover {
+            background-color: var(--color-secondary);
+        }
+    </style>
 </head>
+
 <body>
-    <div align="center">
-        <h1>Regístrate en Yven</h1>
-        <form action="/register" method="post">
-            <table>
-                <tr>
-                    <td><label for="name">Nombre de usuario:</label></td>
-                    <td><input type="text" id="name" name="name" required></td>
-                </tr>
-                <tr>
-                    <td><label for="lastname">Correo electrónico:</label></td>
-                    <td><input type="text" id="lastname" name="lastname" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Telefono:</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Contraseña:</label></td>
-                    <td><input type="password" id="password" name="password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="confirmPassword">Confirmar contraseña:</label></td>
-                    <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button type="submit">Registrarse</button></td>
-                </tr>
-            </table>
+<div>
+
+    <hgroup class="container mx-auto max-w-xl mt-16">
+        <h2 class="text-center text-4xl text-white font-bold mb-4">Regístrate</h2>
+        <p class="text-center text-white text-2xl mb-8 place-content-center">Crear nueva cuenta</p>
+    </hgroup>
+
+    <div class="container card-accion mx-auto max-w-xl p-4 shadow-md rounded-lg formulario">
+
+        <form action="/register" method="post" class="flex flex-col ">
+
+            <label for="name" class="text-white  text-lg mb-2">Nombre de usuario:</label>
+            <input type="text" id="name" name="name" class="border rounded-md text-white p-2 pl-4 bg-transparent"
+                   placeholder="Ingresa tu nombre" required>
+
+            <label for="lastname" class="text-white text-lg mb-1 mt-2">Correo electrónico:</label>
+            <input type="text" id="lastname" name="lastname"
+                   class="border rounded-md text-white p-2 pl-4 bg-transparent" placeholder="email@example.com" required>
+
+            <label for="email" class="text-white text-lg mb-1 mt-2">Telefono:</label>
+            <input type="email" id="email" name="email" class="border rounded-md text-white p-2 pl-4 bg-transparent"
+                   placeholder="Ingresa tu telefono" required>
+
+            <label for="password" class="text-white text-lg mb-1 mt-2">Contraseña:</label></td>
+            <input type="password" id="password" name="password"
+                   class="border rounded-md text-white p-2 pl-4 bg-transparent" placeholder="Registrarse tu contraseña"
+                   required>
+
+
+            <label for="confirmPassword" class="text-white text-lg mb-1 mt-2">Confirmar contraseña:</label>
+
+            <input type="password" id="confirmPassword" name="confirmPassword"
+                   class="border text-white rounded-md p-2 pl-4 bg-transparent" placeholder="Confirma tu contraseña"
+                   required>
+
+            <div class="flex items-center mt-4">
+                <input type="checkbox" id="registerRememberMe" class="mr-2">
+                <label for="registerRememberMe" class="text-white">Recuérdame</label>
+            </div>
+
+            <button type="submit"
+                    class="w-full text-white font-bold py-2 mt-4 rounded-lg ">Registrarse</button>
+
         </form>
-        <p>¿Ya tienes una cuenta? <a href="principal.html">Inicia sesión aquí</a></p>
+
+        <p class="text-center place-content-center mt-4 text-white">¿Ya tienes una cuenta? <a href="principal.htm" class="create-new-acc ml-2 secondary">Inicia sesión aquí</a></p>
     </div>
 
-    </body>
+
+</body>
+
 </html>
