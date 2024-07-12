@@ -1,68 +1,110 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-    <title>Registrar persona - Yven</title>
-    <link rel="stylesheet" href="../static/assets/css/style.css">
+	<title>Registrar persona - Yven</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		  rel="stylesheet">
+	<link rel="stylesheet" href="../static/assets/css/style.css">
+
+	<style>
+		* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        :root {
+          --color-secondary: #C41BA2;
+          --color-dark-blue: #370C94;
+          --color-third: #4442B6;
+          --color-third-opacity: #4442b61c;
+          --color-light: #F8F8F8;
+        }
+
+        body {
+          background-color: #370C94;
+          font-family: 'Montserrat';
+        }
+
+        .formulario {
+          background-color: rgba(255, 255, 255, 0.068);
+        }
+
+        .secondary {
+          color: var(--color-secondary);
+        }
+
+        button {
+          background-color: var(--color-third);
+        }
+
+        button:hover {
+          background-color: var(--color-secondary);
+        }
+	</style>
 </head>
 <body>
-    <main>
-        <section class="person-form">
-            <h2 align="center">Registrar persona</h2>
-			
-		<form action="#" th:action="@{/personas/guardar}" th:object="${persona}" method="post">
-			<table align="center">
-				<thead>
-					<tr>
-						<td>Nueva persona:</td>
-					</tr>
-				</thead>
-				<tbody>					
-					<tr>
-						<td>Número de Documento:</td>
-						<td><input type="text" th:field="*{numeroDocumento}"></td>
-					</tr>
-					<tr>
-						<td>Tipo de Documento: </td>
-						<td><input type="text" th:field="*{tipoDocumento}"></td>
-					</tr>
-					<tr>
-						<td>Primer Apellido:</td>
-						<td><input type="text" th:field="*{primerApellido}"></td>
-					</tr>
-					<tr>
-						<td>Segundo Apellido:</td>
-						<td><input type="text" th:field="*{segundoApellido}"></td>
-					</tr>
-					<tr>
-						<td>Nombres:</td>
-						<td><input type="text" th:field="*{nombres}"></td>
-					</tr>
-					<tr>
-						<td>Fecha de Nacimiento:</td>
-						<td><input type="text" th:field="*{fechaNacimiento}"></td>
-					</tr>
-					<tr>
-						<td>Sexo:</td>
-						<td><input type="text" th:field="*{sexo}"></td>
-					</tr>
-					<tr>
-						<td>Estado Civil:</td>
-						<td><input type="text" th:field="*{estadoCivil}"></td>
-					</tr>
-					<tr>
-						<td>Ubigeo:</td>
-						<td><input type="text" th:field="*{ubigeo}"></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center">
-							<button type="submit">Registrar persona</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+<main>
+	<section class="person-form mt-10 mb-10">
+		<h2 class="text-center text-4xl text-white font-bold mb-4">Registrar persona</h2>
+
+		<form action="#" th:action="@{/personas/guardar}" th:object="${persona}" method="post" class="max-w-md mx-auto formulario rounded-xl p-4 ">
+			<div class="grid md:grid-cols-2 md:gap-6">
+				<div class="relative z-0 w-full mb-5 group">
+					<input type="text" name="floating_first_name" id="floating_number_document" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " th:field="*{numeroDocumento}" required />
+					<label for="floating_number_document" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-white-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número de Documento</label>
+				</div>
+				<div class="relative z-0 w-full mb-5 group">
+					<input type="text" name="floating_last_name" id="floating_document" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{tipoDocumento}" placeholder=" " required />
+					<label for="floating_document" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tipo de Documento</label>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 md:gap-6">
+				<div class="relative z-0 w-full mb-5 group">
+					<input type="text" name="floating_first_name" id="floating_first_name"class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  th:field="*{primerApellido}" required />
+					<label for="floating_first_name" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Primer Apellido</label>
+				</div>
+				<div class="relative z-0 w-full mb-5 group">
+					<input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " th:field="*{segundoApellido}" required />
+					<label for="floating_last_name" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Segundo Apellido</label>
+				</div>
+			</div>
+
+			<div class="relative z-0 w-full mb-5 group">
+				<input type="text" name="floating_last_name" id="floating_name" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " th:field="*{nombres}" required />
+				<label for="floating_name" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombres</label>
+			</div>
+
+			<div class="relative z-0 w-full mb-5 group">
+				<input type="text" name="floating_email" id="floating_date" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{fechaNacimiento}" placeholder=" " required />
+				<label for="floating_date" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha de Nacimiento</label>
+			</div>
+			<div class="relative z-0 w-full mb-5 group">
+				<input type="text" name="floating_password" id="floating_gender" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{sexo}" placeholder=" " required />
+				<label for="floating_gender" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Sexo</label>
+			</div>
+			<div class="relative z-0 w-full mb-5 group">
+				<input type="text" name="repeat_password" id="floating_status" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{estadoCivil}" placeholder=" " required />
+				<label for="floating_status" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Estado Civil</label>
+			</div>
+			<div class="relative z-0 w-full mb-5 group">
+				<input type="text" name="repeat_password" id="floating_ubigeo" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{ubigeo}" placeholder=" " required />
+				<label for="floating_ubigeo" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ubigeo</label>
+			</div>
+
+
+			<button type="submit" class="w-full text-white font-bold py-2 mt-4 rounded-lg hover:bg-secondary bg-third">Submit</button>
 		</form>
-        </section>
-    </main>
+
+	</section>
+</main>
+
+
+
+
 </body>
 </html>

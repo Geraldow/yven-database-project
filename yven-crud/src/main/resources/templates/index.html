@@ -57,13 +57,13 @@
   <div class="container card-accion mx-auto max-w-xl p-4 shadow-md rounded-xl formulario">
 
     <form id="formulario-login" th:action="@{/login}" method="post" class="flex flex-col">
-      <label for="name" class="text-white  text-lg mb-2">Nombre de usuario:</label>
+      <label for="username" class="text-white  text-lg mb-2">Nombre de usuario:</label>
       <input type="" id="username" name="username"
              class="input-info border text-gray-200 rounded-md p-2 pl-4 bg-transparent focus:outline-none"
              placeholder="Nombre de Usuario" required>
       <br>
 
-      <label for="name" class="text-white  text-lg mb-2">Contraseña:</label>
+      <label for="password" class="text-white  text-lg mb-2">Contraseña:</label>
       <input type="password" id="password" name="password"
              class="input-info border text-gray-200 rounded-md p-2 pl-4 bg-transparent" placeholder="*********" required>
 
@@ -79,7 +79,7 @@
       </a>
     </form>
 
-    <p class="text-center place-content-center mt-4 text-white">¿No tienes una cuenta? <a href="bienvenida.html"
+    <p class="text-center place-content-center mt-4 text-white">¿No tienes una cuenta? <a href="home.html"
                                                                                           class="secondary ml-2">Regístrate aquí</a></p>
   </div>
 

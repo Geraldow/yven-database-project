@@ -1,90 +1,80 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
-<title>Listar eventos - Yven</title>
-<style>
-	body {
-		background: #201A30;
-		color: white;
-	}
-	
-	h2 {
-		margin: 50px 0; 
-		width: 30%; 
-    	font-weight: 700;
-    	border-radius: 10px;
-    	color: white;
-    	background: #49A9A4;
-	}
-	
-	 .title-evento {
-		text-decoration: none;
-		font-size: 20px;
-		border: none;
-		background: #8A5796;
-		color: white;
-		border-radius: 5px;
-		padding: 3px 5px;
-	}
-	
-	.title-evento:hover {
-		text-decoration: none;
-		background: #BA5796;
-		color: white;
-	}
-	
-	
-</style>	
+	<meta charset="UTF-8">
+	<title>Tarjetas</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+	<script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+	<style>
+		.bg-primary {
+            background: #370C94;
+        }
+
+        .bg-secondary {
+            background: #C41BA2;
+        }
+
+        .bg-dark-transparent {
+            background: rgba(27, 27, 27, 0.6);
+        }
+
+        .bg-secondary:hover {
+            background: #C41BA2;
+        }
+	</style>
 </head>
-<body>
-	<div align="center">
-		<h2>Eventos</h2>	
-		<a th:href="@{/eventos/nuevo}" class="title-evento">Crear nuevo evento <i class="fa-solid fa-caret-right"></i></a>		
-		<br/><br>
-		<table border="1" cellpadding="20">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Titulo</th>
-					<th>Descripción</th>
-					<th>Ubicación</th>
-					<th>Tipo</th>
-					<th>Fecha</th>
-					<th>Inicio</th>
-					<th>Finalización</th>
-					<th>Capacidad</th>
-					<th>Estado</th>
-					<th>Precio</th>
-					<th>Catering</th>
-					<th>Presupuesto</th>
-					<!--<th>Proveedor</th>	-->
-				</tr>
-			</thead>
-			<tbody>			
-				<tr th:each="evento : ${listaEventos}">
-					<td th:text="${evento.idEvento}">Id</td>
-					<td th:text="${evento.tituloEvento}">Titulo</td>
-					<td th:text="${evento.descripcionEvento}">Descripción</td>
-					<td th:text="${evento.ubicacionEvento}">Ubicación</td>
-					<td th:text="${evento.tipoEvento}">Tipo Evento</td>
-					<td th:text="${evento.fechaEvento}">Fecha del evento</td>
-					<td th:text="${evento.horaInicio}">Inicio</td>
-					<td th:text="${evento.horaFinalizacion}">Finalización</td>
-					<td th:text="${evento.capacidadEvento}">Capacidad</td>
-					<td th:text="${evento.estadoEvento}">Estado</td>
-					<td th:text="${evento.precioEntrada}">Precio</td>
-					<td th:text="${evento.catering}">Catering</td>
-					<td th:text="${evento.presupuesto}">Presupuesto</td>
-					<!-- <td th:text="${evento.organizadorId}">Proveedor</td> -->
-					<td><a th:href="@{/eventos/actualizar/{id}(id=${evento.idEvento})}">Actualizar</a>
-					<td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<body class="bg-primary">
+	<header class="z-40">
+		<nav id="" class="z-40 today bg-dark-transparent fixed justify-between backdrop-blur-md  mb-2 w-full">
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+				<a href="#" class="flex items-center hover:skew-y-3 space-x-1 rtl:space-x-reverse">
+					<img src="../images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
+					<H1 class="text-4xl font-medium text-white">YVEN</H1>
+				</a>
+				<button data-collapse-toggle="navbar-default" type="button"
+						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none  text-gray-400 focus:ring-gray-600"
+						aria-controls="navbar-default" aria-expanded="false">
+					<span class="sr-only">Open main menu</span>
+					<svg class="w-5 h-5 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+						 viewBox="0 0 17 14">
+						<path stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							  d="M1 1h15M1 7h15M1 13h15" />
+					</svg>
+				</button>
+				<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+					<ul class="bg-transparent flex flex-col p-4 md:p-0 mt-4 items-center md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 bg-gray-800">
+						<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/index}">Inicio</a></li>
+						<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/eventos/eventList}">Eventos</a></li>
+						<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/personas/personList}">Personas</a></li>
+						<li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/tarjetas/cardList}">Tarjetas</a></li>
+						<li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesión</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section class="menu-social-media fixed left-0">
+		<div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg flex flex-col w-16 justify-start shadow-sm"
+			 role="group">
+			<button type="button"
+					class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
+				<img src="../images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
+			</button>
+			<button type="button"
+					class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+				<img src="../images/equis.png" class="h-106 w-12 hover:rotate-12" alt="Imagen Twitter">
+			</button>
+			<button type="button"
+					class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+				<img src="../images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
+			</button>
+			<button type="button"
+					class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+				<img src="../images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
+			</button>
+		</div>
+	</section><br><br><br>
 </body>
 </html>

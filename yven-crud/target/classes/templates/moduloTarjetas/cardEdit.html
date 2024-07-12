@@ -31,7 +31,7 @@
         <nav id="" class="z-40 today bg-dark-transparent fixed justify-between backdrop-blur-md  mb-2 w-full">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
                 <a href="#" class="flex items-center hover:skew-y-3 space-x-1 rtl:space-x-reverse">
-                    <img src="images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
+                    <img src="../images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
                     <H1 class="text-4xl font-medium text-white">YVEN</H1>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
@@ -50,35 +50,36 @@
                         <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/eventos/eventList}">Eventos</a></li>
                         <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/personas/personList}">Personas</a></li>
                         <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/tarjetas/cardList}">Tarjetas</a></li>
-                        <li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesión</a></li>
+                        <li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesi�n</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <!-- Social media -->
-    
-    <section class="menu-social-media fixed left-0">
-        <div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg flex flex-col w-16 justify-start shadow-sm"
-             role="group">
-            <button type="button"
-                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
-                <img src="images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
-            </button>
-            <button type="button"
-                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
-                <img src="images/equis.png" class="h-106 w-12 hover:rotate-12" alt="Imagen Twitter">
-            </button>
-            <button type="button"
-                    class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
-                <img src="images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
-            </button>
-            <button type="button"
-                    class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
-                <img src="images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
-            </button>
-        </div>
-    </section><br><br><br>
+
+    <section class="primary-section flex flex-row w-full xl:pt-6 md:pt-12  sm:justify-center mb-36">
+        <section class="menu-social-media fixed left-0">
+            <div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg  flex flex-col w-16 justify-start shadow-sm"
+                 role="group">
+                <button type="button"
+                        class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
+                    <img src="../images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
+                </button>
+                <button type="button"
+                        class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                    <img src="../images/equis.png" class="h-106 w-12 hover:rotate-12" alt="">
+                </button>
+                <button type="button"
+                        class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                    <img src="../images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
+                </button>
+                <button type="button"
+                        class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                    <img src="../images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
+                </button>
+            </div>
+        </section>
 
     
     <div class="row mx-auto justify-content-center">
@@ -102,15 +103,15 @@
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{nombreTarjeta}"></td>
                     </tr>
                     <tr>
-                        <td>Número Tarjeta:</td>
+                        <td>N�mero Tarjeta:</td>
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{numeroTarjeta}"></td>
                     </tr>
                     <tr>
-                        <td>Tiempo de Expiración:</td>
+                        <td>Tiempo de Expiraci�n:</td>
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{tiempoExpiracion}"></td>
                     </tr>
                     <tr>
-                        <td>Código de Seguridad:</td>
+                        <td>C�digo de Seguridad:</td>
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{codigoSeguridad}"></td>
                     </tr>
                     <tr>
@@ -122,14 +123,13 @@
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{cvv}"></td>
                     </tr>
                     <tr>
-                        <td>Dirección:</td>
+                        <td>Direcci�n:</td>
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{direccion}"></td>
                     </tr>
                     <tr>
                         <td>Ciudad:</td>
                         <td class="text-black"><input type="text" class="form-control input-info border text-gray-200 rounded-md p-2 pl-4 mb-4 bg-transparent" th:field="*{ciudad}"></td>
-                    </tr>
-                    
+                    </tr>                    
                     <tr>
                         <td colspan="2" align="center"><br>
 							<button type="submit" class="w-full text-white bg-secondary font-bold py-2 mt-4 rounded-lg hover:bg-secondary bg-third">Guardar Cambios <i class="fa-solid fa-circle-check"></i></button><br>

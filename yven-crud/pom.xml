@@ -40,10 +40,15 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.3.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.19</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -54,6 +59,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
@@ -70,8 +80,12 @@
 						</exclude>
 					</excludes>
 				</configuration>
+
 			</plugin>
 		</plugins>
+
 	</build>
+
+
 
 </project>

@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-241.18034.62">
-    <data-source name="yven_crud_project@localhost" uuid="6cb186ca-b765-4ee4-9114-bc7c43fae198">
+    <data-source name="MySQL" uuid="6cb186ca-b765-4ee4-9114-bc7c43fae198">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="postgres@localhost" uuid="8fbdc103-cfb7-45a4-a9b5-aad82fb03213">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="yven_crud_project@localhost" uuid="c63e86f0-382a-4e11-8300-9746129df8a4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
       <user-name>root</user-name>
       <schema-mapping />
     </data-source>

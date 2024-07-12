@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-primary {
+            background:  #370C94;
+        }
+
+        .bg-secondary {
+            background: #C41BA2;
+        }
+
+        .bg-dark-transparent {
+            background: rgba(27, 27, 27, 0.6);
+        }
+
+        .bg-secondary:hover {
+            background: #C41BA2;
+        }
+
+    </style>
+    <link rel="shortcut icon" href="images/YVEN-LOGO.png" type="image/x-icon">
+</head>
+<body class="bg-primary">
+<header class="z-40 ">
+    <nav id="" class="z-40 today bg-dark-transparent fixed justify-between backdrop-blur-md  mb-2 w-full">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+            <a href="#" class="flex items-center hover:skew-y-3 space-x-1 rtl:space-x-reverse">
+                <img src="images/YVEN-LOGO.png" class="h-12" alt="Yven Logo" />
+                <H1 class="text-4xl font-medium text-white">YVEN</H1>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none  text-gray-400 focus:ring-gray-600"
+                    aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 17 14">
+                    <path stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="bg-transparent flex flex-col p-4 md:p-0 mt-4 items-center md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 bg-gray-800">
+                    <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/index}">Inicio</a></li>
+                    <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/eventos/eventList}">Eventos</a></li>
+                    <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/personas/personList}">Personas</a></li>
+                    <li><a class="px-6 py-2.5 text-white text-center border-gray-400 rounded-full hover:skew-y-6 hover:text-blue-200 md:p-0 text-[18px]" th:href="@{/tarjetas/cardList}">Tarjetas</a></li>
+                    <li><a class="px-6 py-2.5 text-gray-300 border-gray-400 rounded-full hover:skew-y-6 hover:text-red-300 md:p-0 text-[18px]" th:href="@{/usuarios/userList}">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Bienvenida  -->
+<section class="primary-section flex flex-row w-full xl:pt-6 md:pt-12  sm:justify-center mb-36">
+    <section class="menu-social-media fixed left-0">
+        <div class="position-media mt-64 absolute bg-dark-transparent rounded-r-lg  flex flex-col w-16 justify-start shadow-sm"
+             role="group">
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-secondary">
+                <img src="images/youtube.png" class="hover:rotate-12 hover:bg-dark-transparent h-10 w-12" alt="">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/equis.png" class="h-106 w-12 hover:rotate-12" alt="">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900  hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/facebook.png" class="h-10 w-12 hover:rotate-12" alt="">
+            </button>
+            <button type="button"
+                    class="px-3 py-3 text-sm font-medium text-gray-900 rounded-br-lg hover:bg-primary hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  hover:rounded-br-lg border-gray-700 text-white hover:text-white  focus:ring-blue-500 focus:text-white">
+                <img src="images/instagram.png" class="h-10 w-12 hover:rotate-12" alt="">
+            </button>
+        </div>
+    </section>
+    <div class="w-full">
+        <section class="container-text-primary mx-20 xl:mx-12 lg:mx-12 md:mx-6">
+            <div class="place-content-center text-center mt-6 pt-28 w-4/5 mx-auto">
+                <div class="w-1/2 mx-auto">
+                    <p
+                            class="font-light font-montserrat pt-10 pb-4 text-gray-200 xs:text-4xl xl:text-4xl md:text-md lg:text-2xl sm:text-lg">
+                        ¡Bienvenido a Yven!
+                    </p>
+                    <div id="button-1" class="mx-auto"></div>
+                </div>
+                <img src="images/main-text.svg" class="w-4/6 mx-auto block mb-6" alt=""><br>
+                <button type="button" class="mx-auto text-light-color bg-dark-transparent hover:bg-fuchsia-600 border border-light-color font-medium rounded-full text-sm px-6 py-2.5 text-center mb-6 flex items-center space-x-2">
+                    <!-- Icon (Using SVG) -->
+
+                    <!-- Text -->
+                    <span class="text-sm text-white">Crear nuevo evento</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-yellow-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                    </svg>
+
+
+                    </img>
+                </button>
+                <div class="w-1/2 mx-auto">
+                    <p
+                            class="font-light text-[32px] font-montserrat pt-3 pb-4 text-gray-200 xs:text-4xl xl:text-4xl md:text-md lg:text-2xl sm:text-lg">
+                        Yven empodera a las personas a crear eventos memorables y significativos a través de una plataforma innovadora, accesible y centrada en el cliente
+                    </p>
+                    <div id="button-1" class="mx-auto"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+</body>
+</html>
